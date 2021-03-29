@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity
                 case R.id.btnEql:
                     operater2 = Integer.parseInt(calculation);
                     state = 1;
+                    calculation = "";
+                    textCalculation.setText(calculation);
                     switch (sign){
                         case 1:
                             textResult.setText(operater1 + operater2);
@@ -149,6 +151,9 @@ public class MainActivity extends AppCompatActivity
                             textResult.setText(operater1 / operater2);      
                             break;
                     }
+                case R.id.btnBS:
+                case R.id.btnCE:
+                case R.id.btnC:
             default:
                 break;
             }
