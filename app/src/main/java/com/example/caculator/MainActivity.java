@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity
         private int sign = 0;
         private int operater1, operater2;
 
-
         @Override
         protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -139,21 +138,34 @@ public class MainActivity extends AppCompatActivity
                     textCalculation.setText(calculation);
                     switch (sign){
                         case 1:
-                            textResult.setText(operater1 + operater2);
+                            textResult.setText(Integer.toString(operater1 + operater2));
                             break;
                         case 2:
-                            textResult.setText(operater1 - operater2);
+                            textResult.setText(Integer.toString(operater1 - operater2));
                             break;
                         case 3:
-                            textResult.setText(operater1 * operater2);
+                            textResult.setText(Integer.toString(operater1 * operater2));
                             break;
                         case 4:
-                            textResult.setText(operater1 / operater2);      
+                            textResult.setText(Integer.toString(operater1 / operater2));
                             break;
+                        default:
+                            textResult.setText("0");
                     }
+                    break;
                 case R.id.btnBS:
+                    calculation = calculation.substring(0, calculation.length() - 1);
+                    textCalculation.setText(calculation);
+                    break;  
                 case R.id.btnCE:
+                    calculation = "";
+                    textCalculation.setText(calculation);
+                    break;
                 case R.id.btnC:
+                    state = 1;
+                    calculation = "";
+                    textCalculation.setText(calculation);
+                    break;
             default:
                 break;
             }
